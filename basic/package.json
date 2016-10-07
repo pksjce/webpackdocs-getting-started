@@ -1,0 +1,14 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "description": "Using webpack for a basic setup",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pksjce",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.25"
+  }
+}
