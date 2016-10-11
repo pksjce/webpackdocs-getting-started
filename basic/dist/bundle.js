@@ -90,12 +90,13 @@ const knocker = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__knock_knock_js__ = __webpack_require__(0);
 
 
-let html = ['<div>' + __WEBPACK_IMPORTED_MODULE_0__knock_knock_js__["a" /* default */].knock() + '</div>',
-            '<div>whos there?</div>',
-            '<div>' + __WEBPACK_IMPORTED_MODULE_0__knock_knock_js__["a" /* default */].whosthere() + '</div>',
-            '<div> webpack who? </div>',
-            '<div>' + __WEBPACK_IMPORTED_MODULE_0__knock_knock_js__["a" /* default */].webpackwho() + '</div>'];
-document.getElementById('knock').innerHTML = html.join('');
+let knock = document.getElementById('knock');
+const divList = [__WEBPACK_IMPORTED_MODULE_0__knock_knock_js__["a" /* default */].knock(), 'whos there', __WEBPACK_IMPORTED_MODULE_0__knock_knock_js__["a" /* default */].whosthere(), 'webpack who?', __WEBPACK_IMPORTED_MODULE_0__knock_knock_js__["a" /* default */].webpackwho()];
+divList.forEach(function(div){
+    var divFrag = document.createElement('div');
+    divFrag.textContent = div;
+    knock.appendChild(divFrag);
+})
 
 /***/ }
 /******/ ]);

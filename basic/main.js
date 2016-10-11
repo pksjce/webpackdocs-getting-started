@@ -1,8 +1,9 @@
 import knocker from './knock-knock.js';
 
-let html = ['<div>' + knocker.knock() + '</div>',
-            '<div>whos there?</div>',
-            '<div>' + knocker.whosthere() + '</div>',
-            '<div> webpack who? </div>',
-            '<div>' + knocker.webpackwho() + '</div>'];
-document.getElementById('knock').innerHTML = html.join('');
+let knock = document.getElementById('knock');
+const divList = [knocker.knock(), 'whos there', knocker.whosthere(), 'webpack who?', knocker.webpackwho()];
+divList.forEach(function(div){
+    var divFrag = document.createElement('div');
+    divFrag.textContent = div;
+    knock.appendChild(divFrag);
+})

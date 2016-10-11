@@ -1,7 +1,11 @@
-const render = (elementId, html) => {
-    getElement(elementId).innerHTML = html.join('');
+let elem = null;
+const init = elementId => {
+    elem = document.getElementById(elementId);
+}
+const append = text => {
+    var divElem = document.createElement('div');
+    divElem.textContent = text;
+    elem.appendChild(divElem);
 }
 
-const getElement = elementId => document.getElementById(elementId);
-
-export default {render};
+export {append, init};

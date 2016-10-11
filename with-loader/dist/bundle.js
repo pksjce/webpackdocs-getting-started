@@ -74,15 +74,18 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var render = function render(elementId, html) {
-    getElement(elementId).innerHTML = html.join('');
+var elem = null;
+var init = function init(elementId) {
+    elem = document.getElementById(elementId);
+};
+var append = function append(text) {
+    var divElem = document.createElement('div');
+    divElem.textContent = text;
+    elem.appendChild(divElem);
 };
 
-var getElement = function getElement(elementId) {
-    return document.getElementById(elementId);
-};
-
-exports.default = { render: render };
+exports.append = append;
+exports.init = init;
 
 /***/ },
 /* 1 */
@@ -93,13 +96,12 @@ exports.default = { render: render };
 
 var _view = __webpack_require__(0);
 
-var _view2 = _interopRequireDefault(_view);
+(0, _view.init)('output');
+var textDivs = ['npm install babel-loader babel-core babel-preset-es2015 --save-dev', 'Add modules array to webpack.', 'Each loader must have an include regex. Put node_modules in exclude regex.', 'Babel will transpile all the files in the include folder to es5', 'Babels preset for es2015 has all the transpiling required for es2015 features only'];
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var html = ['<div>npm install babel-loader babel-core babel-preset-es2015 --save-dev</div>', '<div>Add modules array to webpack.</div>', '<div>Each loader must have an include regex. Put node_modules in exclude regex.</div>', '<div>Babel will transpile all the files in the include folder to es5</div>', '<div>Babels preset for es2015 has all the transpiling required for es2015 features only</div>'];
-
-_view2.default.render('output', html);
+textDivs.forEach(function (textNode) {
+            (0, _view.append)(textNode);
+});
 
 /***/ }
 /******/ ]);

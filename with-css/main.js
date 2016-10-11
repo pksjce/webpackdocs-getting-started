@@ -1,5 +1,10 @@
 require('./styles.css')
 
-var html = ['<div>npm install css-loader style-loader --save-dev</div>',
-            '<div class="red-bk">I can add classes now</div>']
-document.getElementById('output').innerHTML = html.join('');
+let output = document.getElementById('output');
+const divList = ['npm install css-loader style-loader --save-dev', 'I can add classes now'];
+divList.forEach(function(div){
+    var divFrag = document.createElement('div');
+    divFrag.textContent = div;
+    divFrag.className = 'red-bk';
+    output.appendChild(divFrag);
+})
