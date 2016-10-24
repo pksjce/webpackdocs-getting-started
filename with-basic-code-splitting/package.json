@@ -1,0 +1,23 @@
+{
+  "name": "with-basic-code-splitting",
+  "version": "1.0.0",
+  "description": "webpack with some code splitting",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "html-webpack-plugin": "^2.24.0"
+  },
+  "scripts": {
+    "start": "rm -rf ./dist && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "code",
+    "splitting"
+  ],
+  "author": "pksjce",
+  "license": "ISC"
+}
